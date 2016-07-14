@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/splash"
-    android:background="@color/background_material_light"
     android:paddingTop="100dp"
     android:paddingRight="20dp"
     android:paddingLeft="20dp">
@@ -17,7 +16,6 @@
         android:id="@+id/textGreetings"
         android:layout_gravity="center"
         android:textSize="40sp"
-        android:textColor="@color/abc_primary_text_material_light"
         android:textAlignment="center" />
 
     <EditText

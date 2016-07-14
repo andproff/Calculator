@@ -1,8 +1,12 @@
 package com.goroshevsky.calculator;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
@@ -14,7 +18,7 @@ import android.widget.Toast;
 /**
  * Created by vadim on 10-Jul-16.
  */
-public class SplashActivity extends Activity {
+public class SplashActivity extends AppCompatActivity {
     private String TAG = "Splash";
     private EditText textUserName;
 
@@ -22,6 +26,14 @@ public class SplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        if (Build.VERSION.SDK_INT < 23) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
+        else {
+            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MainActivity.REQUEST_LOCATION);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
+            }
+        }
         textUserName = (EditText) findViewById(R.id.userNameEditText);
     }
 
