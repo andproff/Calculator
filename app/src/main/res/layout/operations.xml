@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/switch_thumb_disabled_material_dark">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/del"
+        android:id="@+id/buttonDel"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="12sp"
+        android:layout_marginTop="35dp" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/divide"
+        android:id="@+id/buttonDiv"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/multiple"
+        android:id="@+id/buttonMul"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minus"
+        android:id="@+id/buttonMin"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plus"
+        android:id="@+id/buttonPlus"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp" />
+
+</LinearLayout>

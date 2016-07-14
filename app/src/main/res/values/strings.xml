@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Calculator FW</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="greetings">Gotham needs a hero. Write your name!</string>
+    <string name="goButton">GO!</string>
+    <string name="username">Username</string>
+    <string name="nr_of_buttons">Nr. of buttons</string>
+    <string name="formula">Formula</string>
+    <string name="result">Result</string>
+    <string name="list_view_id" translatable="false">ID</string>
+    <string name="delete_record">Delete</string>
+    <string name="sql_data">SQL Data</string>
+    <string name="calculator">Calculator</string>
+    <string name="math_operations">Popular operations</string>
+    <string name="communicate">Communicate</string>
+    <string name="share">Share on Facebook!</string>
+    <string name="popular_operations">Most popular math operations</string>
+    <string name="clear_input">Clear input</string>
+    <string name="bad_expression">Bad expression!</string>
+    <string name="clear">CLEAR</string>
+    <string name="camera_start">Making photo</string>
+    <string name="photo_saved">Your front cam photo is saved in CalcPictures folder</string>
+    <string name="vibrate">3 seconds passed, vibrate</string>
+    <string name="name_is_not_set">Name is not set!</string>
+
+</resources>

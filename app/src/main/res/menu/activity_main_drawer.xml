@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_calculator"
+            android:icon="@drawable/ic_math"
+            android:title="@string/calculator" />
+        <item
+            android:id="@+id/nav_sql_data"
+            android:icon="@drawable/ic_database"
+            android:title="@string/sql_data" />
+        <item
+            android:id="@+id/nav_graph"
+            android:icon="@drawable/ic_graph"
+            android:title="@string/math_operations" />
+
+    </group>
+
+</menu>

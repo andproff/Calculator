@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculator FW</string>
+    <string name="bad_expression">Expresie incorectă!</string>
+    <string name="calculator">Calculator</string>
+    <string name="camera_start">Crearea foto</string>
+    <string name="clear">ȘTERGERE</string>
+    <string name="clear_input">Ștergerea datelor introduse</string>
+    <string name="communicate">Comunicare</string>
+    <string name="delete_record">Ștergere</string>
+    <string name="formula">Formula</string>
+    <string name="goButton">Înainte!</string>
+    <string name="greetings">Gotham are nevoie de un erou. Scrie numele tău!</string>
+    <string name="math_operations">Operații populare</string>
+    <string name="name_is_not_set">Numele nu este setat!</string>
+    <string name="navigation_drawer_close">Închidere panou de navigare</string>
+    <string name="navigation_drawer_open">Deschidere panou de navigare</string>
+    <string name="nr_of_buttons">Nr. de butoane</string>
+    <string name="photo_saved">Foto Dvs. este salvat în mapă CalcPictures</string>
+    <string name="popular_operations">Cele mai des accesate operații matematice</string>
+    <string name="result">Rezultat</string>
+    <string name="share">Share pe Facebook!</string>
+    <string name="sql_data">Datele SQL</string>
+    <string name="username">Numele utilizatorului</string>
+    <string name="vibrate">Au trecut 3 secunde, vibrația este pornită</string>
+    <string name="visualise_activity_label"></string>
+</resources>

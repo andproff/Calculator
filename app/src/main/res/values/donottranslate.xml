@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nr1" translatable="false">1</string>
+    <string name="nr2" translatable="false">2</string>
+    <string name="nr3" translatable="false">3</string>
+    <string name="nr4" translatable="false">4</string>
+    <string name="nr5" translatable="false">5</string>
+    <string name="nr6" translatable="false">6</string>
+    <string name="nr7" translatable="false">7</string>
+    <string name="nr8" translatable="false">8</string>
+    <string name="nr9" translatable="false">9</string>
+    <string name="nr0" translatable="false">0</string>
+    <string name="plus" translatable="false">+</string>
+    <string name="equal" translatable="false">=</string>
+    <string name="dot" translatable="false">.</string>
+    <string name="divide" translatable="false">÷</string>
+    <string name="multiple" translatable="false">×</string>
+    <string name="minus" translatable="false">-</string>
+    <string name="sin" translatable="false">sin</string>
+    <string name="cos" translatable="false">cos</string>
+    <string name="tan" translatable="false">tan</string>
+    <string name="ln" translatable="false">ln</string>
+    <string name="log" translatable="false">log</string>
+    <string name="fact" translatable="false">!</string>
+    <string name="pi" translatable="false">π</string>
+    <string name="exp" translatable="false">e</string>
+    <string name="pow" translatable="false">^</string>
+    <string name="openp" translatable="false">(</string>
+    <string name="closep" translatable="false">)</string>
+    <string name="sqrt" translatable="false">√</string>
+    <string name="del" translatable="false">DEL</string>
+</resources>
