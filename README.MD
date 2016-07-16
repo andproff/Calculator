@@ -17,7 +17,7 @@
 1. ~~Cover with unit tests all methods there will be~~
 2. Draw a diagram with current most popular math operations in calc app
 3. ~~Use Facebook to share your calc formulas and result~~
-4. Get user location to change app color scheme depending on the day time. ( Some moments are not clear here.  [Documentation](https://developer.android.com/reference/android/support/v7/app/AppCompatDelegate.html#MODE_NIGHT_AUTO) [Google blog post](http://android-developers.blogspot.md/2016/02/android-support-library-232.html))
+4. Get user location to change app color scheme depending on the day time.
 5. When user will get result '32' make a front cam photo.
 6. Clear input view with shake.
 7. Vibrate if app is in front and input view is empty for 3 sec from app start.

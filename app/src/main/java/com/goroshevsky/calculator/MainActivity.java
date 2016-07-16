@@ -1,14 +1,9 @@
 package com.goroshevsky.calculator;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -34,8 +29,9 @@ public class MainActivity extends AppCompatActivity
     public EditText txtFormula;
     public EditText txtResult;
     private TextView userNameLabel;
+    private DrawerLayout drawer;
+    private ActionBarDrawerToggle toggle;
     public static boolean VIBRATE_WAS_CALLED = false;
-    public static final int REQUEST_LOCATION = 0;
 
     static{
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
@@ -47,12 +43,11 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         setSupportActionBar(toolbar);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -78,8 +73,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        toggle.syncState();
+    }
+    @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -107,7 +106,6 @@ public class MainActivity extends AppCompatActivity
             transaction.addToBackStack(null);
             transaction.commit();
 
-
         } else if (id == R.id.nav_calculator) {
             Log.d(TAG, "Switch to MainFragment");
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
@@ -117,7 +115,6 @@ public class MainActivity extends AppCompatActivity
             transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
             transaction.addToBackStack(null);
             transaction.commit();
-
 
         } else if (id == R.id.nav_graph) {
             Log.d(TAG, "Switch to GraphFragment");
@@ -130,8 +127,6 @@ public class MainActivity extends AppCompatActivity
             transaction.commit();
 
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
