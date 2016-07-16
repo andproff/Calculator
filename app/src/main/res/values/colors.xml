@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="material_grey">#ff424242</color>
+    <color name="cyan_advanced_pad">#1de9b6</color>
+    <color name="number_pad_color_primary_disabled">#4Dffffff</color>
+    <color name="number_pad_color_primary">#ffffffff</color>
+    <color name="operations_pad">#ff616161</color>
+    <color name="advanced_pad_color_primary_disabled">#39000000</color>
+    <color name="advanced_pad_color_primary">#de000000</color>
 </resources>

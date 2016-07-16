@@ -23,6 +23,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/listView"
         tools:listitem="@layout/item"
-        android:paddingTop="60dp"
-        android:paddingLeft="5dp" />
+        android:paddingTop="@dimen/sql_data_fragment_padding_top"
+        android:paddingLeft="@dimen/sql_data_fragment_padding_left" />
 </LinearLayout>

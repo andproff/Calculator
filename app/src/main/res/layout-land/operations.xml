@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/operations_pad">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/divide"
+            android:id="@+id/buttonDiv"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@drawable/color_number_pad_text"
+            android:textSize="@dimen/operations_pad_text_size"
+            android:layout_marginTop="@dimen/operations_margin_top" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/del"
+            android:id="@+id/buttonDel"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@drawable/color_number_pad_text"
+            android:textSize="@dimen/operations_pad_text_size"
+            android:layout_marginTop="@dimen/operations_margin_top" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/multiple"
+            android:id="@+id/buttonMul"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@drawable/color_number_pad_text"
+            android:textSize="@dimen/operations_pad_text_size"
+            android:layout_marginTop="@dimen/operations_buttons_margin" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minus"
+            android:id="@+id/buttonMin"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@drawable/color_number_pad_text"
+            android:textSize="@dimen/operations_pad_text_size"
+            android:layout_marginTop="@dimen/operations_buttons_margin" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plus"
+            android:id="@+id/buttonPlus"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@drawable/color_number_pad_text"
+            android:textSize="@dimen/operations_pad_text_size"
+            android:layout_marginTop="@dimen/operations_buttons_margin" />
+    </TableRow>
+</TableLayout>
+

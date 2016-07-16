@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="number_pad_text_size">17sp</dimen>
+    <dimen name="operations_pad_text_size">12sp</dimen>
+    <dimen name="number_pad_margin_top">0dp</dimen>
+    <dimen name="number_pad_table_row_margin_top">0dp</dimen>
+    <dimen name="operations_margin_top">5dp</dimen>
+    <dimen name="operations_buttons_margin">0dp</dimen>
+    <dimen name="advanced_pad_text_size">17sp</dimen>
+    <dimen name="borderless_button_min_width">70dp</dimen>
+    <dimen name="display_margin_top">35dp</dimen>
+    <dimen name="display_formula_padding_top">24dip</dimen>
+    <dimen name="display_formula_padding_bottom">12dip</dimen>
+    <dimen name="display_formula_text_size">18sp</dimen>
+    <dimen name="display_result_padding_top">12dip</dimen>
+    <dimen name="display_result_padding_bottom">24dip</dimen>
+    <dimen name="display_result_text_size">18sp</dimen>
+    <dimen name="splash_padding_top">30dp</dimen>
+    <dimen name="splash_text_size">40sp</dimen>
+    <dimen name="graph_fragment_padding_top">50dp</dimen>
+    <dimen name="graph_padding_top">30dp</dimen>
+    <dimen name="graph_padding_left_right">10dp</dimen>
+</resources>

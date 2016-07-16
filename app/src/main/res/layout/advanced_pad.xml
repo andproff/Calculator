@@ -1,180 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cyan_advanced_pad"
+    android:gravity="center|center_horizontal">
 
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/tableLayout"
-        android:background="#1de9b6"
-        android:layout_marginRight="0dp">
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/number_pad_margin_top"
+        android:gravity="center_horizontal">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="15dp">
+        <Button
+            android:id="@+id/buttonSin"
+            style="@style/MyBorderlessButton"
+            android:layout_column="0"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/sin"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
 
-            <Button
-                android:text="@string/sin"
-                android:id="@+id/buttonSin"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="0"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
+        <Button
 
-            <Button
+            android:id="@+id/buttonCos"
+            style="@style/MyBorderlessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/cos"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cos"
-                android:id="@+id/buttonCos"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="1"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
+        <Button
+            android:id="@+id/buttonTan"
+            style="@style/MyBorderlessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/tan"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tan"
-                android:id="@+id/buttonTan"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="2"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
+    </TableRow>
 
-        </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/number_pad_margin_top"
+        android:gravity="center_horizontal">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <Button
+            android:id="@+id/buttonLn"
+            style="@style/MyBorderlessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/ln"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ln"
-                android:id="@+id/buttonLn"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="0"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
+        <Button
+            android:id="@+id/buttonLog"
+            style="@style/MyBorderlessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/log"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/log"
-                android:id="@+id/buttonLog"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="1"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
+        <Button
+            android:id="@+id/buttonFact"
+            style="@style/MyBorderlessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/fact"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
+    </TableRow>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fact"
-                android:id="@+id/buttonFact"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="2"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
-        </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/number_pad_margin_top"
+        android:gravity="center_horizontal">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp">
+        <Button
+            android:id="@+id/buttonPi"
+            style="@style/MyBorderlessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/pi"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pi"
-                android:id="@+id/buttonPi"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="0"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
+        <Button
+            android:id="@+id/buttonExp"
+            style="@style/MyBorderlessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/exp"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/exp"
-                android:id="@+id/buttonExp"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="1"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
+        <Button
+            android:id="@+id/buttonPow"
+            style="@style/MyBorderlessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/pow"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
+    </TableRow>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pow"
-                android:id="@+id/buttonPow"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="2"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
-        </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/number_pad_margin_top"
+        android:gravity="center_horizontal">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp">
+        <Button
+            android:id="@+id/buttonOpen"
+            style="@style/MyBorderlessButton"
+            android:layout_column="0"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/openp"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
 
-            <Button
-                android:text="@string/openp"
-                android:id="@+id/buttonOpen"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="0"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
+        <Button
+            android:id="@+id/buttonClose"
+            style="@style/MyBorderlessButton"
+            android:layout_column="1"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/closep"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
 
-            <Button
-                android:text="@string/closep"
-                android:id="@+id/buttonClose"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="1"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
+        <Button
+            android:id="@+id/buttonSqrt"
+            style="@style/MyBorderlessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_margin="@dimen/margin_null"
+            android:text="@string/sqrt"
+            android:textAllCaps="false"
+            android:textColor="@drawable/color_advanced_pad_text"
+            android:textSize="@dimen/advanced_pad_text_size" />
+    </TableRow>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sqrt"
-                android:id="@+id/buttonSqrt"
-                android:layout_margin="0dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_column="2"
-                android:textColor="@color/abc_primary_text_material_light"
-                android:textSize="23sp"
-                android:textAllCaps="false" />
-        </TableRow>
-
-    </TableLayout>
-
-</LinearLayout>
+</TableLayout>

@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/splash"
-    android:paddingTop="100dp"
-    android:paddingRight="20dp"
-    android:paddingLeft="20dp">
+    android:paddingTop="@dimen/splash_padding_top"
+    android:paddingRight="@dimen/splash_padding_left_right"
+    android:paddingLeft="@dimen/splash_padding_left_right">
 
 
     <TextView
@@ -15,7 +15,7 @@
         android:text="@string/greetings"
         android:id="@+id/textGreetings"
         android:layout_gravity="center"
-        android:textSize="40sp"
+        android:textSize="@dimen/splash_text_size"
         android:textAlignment="center" />
 
     <EditText
