@@ -61,6 +61,9 @@ public class MainFragment extends Fragment implements View.OnLongClickListener, 
     private Sensor mAccelerometer;
     private ShakeDetector mShakeDetector;
 
+    @SuppressWarnings("deprecation")
+    private Camera camera;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         final View mainView = inflater.inflate(R.layout.main_fragment, parent, false);
@@ -131,7 +134,6 @@ public class MainFragment extends Fragment implements View.OnLongClickListener, 
         buttonClose.setOnClickListener(this);
         Button buttonSqrt = (Button) mainView.findViewById(R.id.buttonSqrt);
         buttonSqrt.setOnClickListener(this);
-
 
         mSensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -353,57 +355,56 @@ public class MainFragment extends Fragment implements View.OnLongClickListener, 
     }
 
     @SuppressWarnings("deprecation")
-    private void takeFrontCamPhoto() {
+    private void prepareCamera() {
         Toast.makeText(getActivity().getApplicationContext(), R.string.camera_start, Toast.LENGTH_SHORT).show();
         SurfaceView surface = new SurfaceView(getActivity().getApplicationContext());
+        int numberOfCameras = Camera.getNumberOfCameras();
+        Log.d(TAG, "Number of cameras: " + String.valueOf(numberOfCameras));
+        Camera.CameraInfo ci = new Camera.CameraInfo();
+
+        int cameraId = -1;
+
+        for (int i = 0; i < numberOfCameras; i++) {
+            Camera.getCameraInfo(i, ci);
+            if (ci.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+                cameraId = i;
+                Log.d(TAG, "Front camera ID: " + String.valueOf(cameraId));
+            }
+        }
+        camera = Camera.open(cameraId);
+        try {
+            camera.setPreviewDisplay(surface.getHolder());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        SurfaceTexture st = new SurfaceTexture(getActivity().getApplicationContext().MODE_PRIVATE);
+        try {
+            camera.setPreviewTexture(st);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        camera.startPreview();
+        Camera.Parameters params = camera.getParameters();
+        Log.d(TAG, String.valueOf(params.getJpegQuality()));
+        params.setJpegQuality(100);
+        params.setRotation(270);
+        Camera.Size bestSize;
+        List<Camera.Size> sizeList = camera.getParameters().getSupportedPreviewSizes();
+        bestSize = sizeList.get(0);
+        for (int i = 1; i < sizeList.size(); i++) {
+            if ((sizeList.get(i).width * sizeList.get(i).height) > (bestSize.width * bestSize.height)) {
+                bestSize = sizeList.get(i);
+            }
+        }
+        params.setPictureSize(bestSize.width, bestSize.height);
+        camera.setParameters(params);
+    }
+
+    @SuppressWarnings("deprecation")
+    private void takeFrontCamPhoto() {
 
         if (Build.VERSION.SDK_INT < 23) {
-
-            int numberOfCameras = Camera.getNumberOfCameras();
-            Log.d(TAG, "Number of cameras: " + String.valueOf(numberOfCameras));
-            Camera.CameraInfo ci = new Camera.CameraInfo();
-
-            int cameraId = -1;
-
-            for (int i = 0; i < numberOfCameras; i++) {
-                Camera.getCameraInfo(i, ci);
-                if (ci.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-                    cameraId = i;
-                    Log.d(TAG, "Front camera ID: " + String.valueOf(cameraId));
-                }
-            }
-            final Camera camera = Camera.open(cameraId);
-            try {
-                camera.setPreviewDisplay(surface.getHolder());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            SurfaceTexture st = new SurfaceTexture(getActivity().getApplicationContext().MODE_PRIVATE);
-            try {
-                camera.setPreviewTexture(st);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            camera.startPreview();
-            Camera.Parameters params = camera.getParameters();
-            Log.d(TAG, String.valueOf(params.getJpegQuality()));
-            params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
-            params.setSceneMode(Camera.Parameters.SCENE_MODE_AUTO);
-            params.setWhiteBalance(Camera.Parameters.WHITE_BALANCE_AUTO);
-            params.setExposureCompensation(0);
-            params.setJpegQuality(100);
-            params.setRotation(270);
-            Camera.Size bestSize;
-            List<Camera.Size> sizeList = camera.getParameters().getSupportedPreviewSizes();
-            bestSize = sizeList.get(0);
-            for (int i = 1; i < sizeList.size(); i++) {
-                if ((sizeList.get(i).width * sizeList.get(i).height) > (bestSize.width * bestSize.height)) {
-                    bestSize = sizeList.get(i);
-                }
-            }
-            params.setPictureSize(bestSize.width, bestSize.height);
-            camera.setParameters(params);
-
+            prepareCamera();
             //without delay photos are dark
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -412,60 +413,13 @@ public class MainFragment extends Fragment implements View.OnLongClickListener, 
                 }
             }, 1000);
 
-
         } else {
-
             if ((getActivity().checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) ||
                     (getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)) {
                 requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CAMERA_AND_STORAGE);
 
             } else {
-
-                int numberOfCameras = Camera.getNumberOfCameras();
-                Log.d(TAG, "Number of cameras: " + String.valueOf(numberOfCameras));
-                Camera.CameraInfo ci = new Camera.CameraInfo();
-
-                int cameraId = -1;
-
-                for (int i = 0; i < numberOfCameras; i++) {
-                    Camera.getCameraInfo(i, ci);
-                    if (ci.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-                        cameraId = i;
-                        Log.d(TAG, "Front camera ID: " + String.valueOf(cameraId));
-                    }
-                }
-                final Camera camera = Camera.open(cameraId);
-                try {
-                    camera.setPreviewDisplay(surface.getHolder());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                SurfaceTexture st = new SurfaceTexture(getActivity().getApplicationContext().MODE_PRIVATE);
-                try {
-                    camera.setPreviewTexture(st);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                camera.startPreview();
-                Camera.Parameters params = camera.getParameters();
-                Log.d(TAG, String.valueOf(params.getJpegQuality()));
-                params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
-                params.setSceneMode(Camera.Parameters.SCENE_MODE_AUTO);
-                params.setWhiteBalance(Camera.Parameters.WHITE_BALANCE_AUTO);
-                params.setExposureCompensation(0);
-                params.setJpegQuality(100);
-                params.setRotation(270);
-                Camera.Size bestSize;
-                List<Camera.Size> sizeList = camera.getParameters().getSupportedPreviewSizes();
-                bestSize = sizeList.get(0);
-                for (int i = 1; i < sizeList.size(); i++) {
-                    if ((sizeList.get(i).width * sizeList.get(i).height) > (bestSize.width * bestSize.height)) {
-                        bestSize = sizeList.get(i);
-                    }
-                }
-                params.setPictureSize(bestSize.width, bestSize.height);
-                camera.setParameters(params);
-
+                prepareCamera();
                 //without delay photos are dark
                 new Handler().postDelayed(new Runnable() {
                     @Override
